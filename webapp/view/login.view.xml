@@ -1,0 +1,29 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="bala.comshopfloor_portal.controller.login"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="app">
+		<pages>
+				<Page title="Shop floor Portal">
+				<content>
+   <VBox fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
+    <items>
+    	<Text text="Login page" />
+     <Input id="userid" placeholder="User ID"></Input>
+     <Input id="password" placeholder="Password" type="Password"></Input>
+     <Button width="12rem" text="Login" type="Emphasized" press="onClick"></Button>
+    </items>
+   </VBox>
+  </content>
+  <footer >
+   <Bar>
+    <contentLeft>
+     <Text text="Kaartech"></Text>
+    </contentLeft>
+    <contentRight>
+     <Text text="Login"></Text>
+    </contentRight>
+   </Bar>
+  </footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

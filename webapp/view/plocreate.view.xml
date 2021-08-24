@@ -1,0 +1,39 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	controllerName="bala.comshopfloor_portal.controller.plocreate" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Panel width="100%">
+		<l:Grid defaultSpan="L12 M7 S12" width="auto">
+			<l:content>
+				<f:SimpleForm width="100%" id="SimpleFormChange354wide" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3"
+					labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+					columnsL="1" columnsM="1" singleContainerFullSize="false">
+					<f:content>
+						<!--<Label text="Name"/>
+					<Input value="{SupplierName}"/>
+					<Label text="Street/No."/>
+					<Input value="{Street}"></Input>
+				
+					<Label text="ZIP Code/City"/>
+					<Input value="{ZIPCode}"/>
+					<Label text="ZIP Code/City"/>
+					<Input value="{City}"/>
+					<Label text="Country"/>
+					<Input value="{City}"/>-->
+						<Label text="Planned order profile"/>
+						<Input id="plo_prof" value="{SupplierName}"/>
+						<Label text="Material"/>
+						<Input id="material" value="{Street}"></Input>
+						<Label text="Planned order quantity"/>
+						<Input id="plo_qty" value="{Street}"></Input>
+						<Label text="Order start date"/>
+						<DatePicker id="plo_sdate" placeholder="Enter Date" valueFormat="yyyy-MM-dd" change="handleChange" class="sapUiSmallMarginBottom"/>
+						<Label text="Order finish date"/>
+						<DatePicker id="plo_fdate" valueFormat="yyyy-MM-dd" placeholder="Enter Date" change="handleChange" class="sapUiSmallMarginBottom"/>
+						<Label/>
+					<Button width="12rem" text="Create" type="Emphasized" press="onClick"></Button>
+					
+					</f:content>
+				</f:SimpleForm>
+			</l:content>
+		</l:Grid>
+	</Panel>
+</mvc:View>

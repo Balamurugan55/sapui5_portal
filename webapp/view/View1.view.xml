@@ -1,0 +1,28 @@
+<mvc:View controllerName="bala.comshopfloor_portal.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App id="app">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+   <VBox fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
+    <items>
+     <Input id="uid" placeholder="User ID"></Input>
+     <Input id="pasw" placeholder="Password" type="Password"></Input>
+     <Button width="12rem" text="Login" type="Emphasized" press="onClick"></Button>
+    </items>
+   </VBox>
+  </content>
+  <footer >
+   <Bar>
+    <contentLeft>
+     <Text text="techippo"></Text>
+    </contentLeft>
+    <contentRight>
+     <Text text="myLogin"></Text>
+    </contentRight>
+   </Bar>
+  </footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
