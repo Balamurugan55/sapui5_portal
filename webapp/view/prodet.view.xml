@@ -1,9 +1,139 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="bala.comshopfloor_portal.controller.prodet"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	controllerName="bala.comshopfloor_portal.controller.prodet" xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
-			<Page title="Title">
-				<content></content>
+			<Page title="Production order details" showNavButton="true" navButtonPress="onBack">
+				<content>
+					<l:VerticalLayout class="sapUiContentPadding" width="100%">
+						<l:dependents>
+							<core:Fragment fragmentName="bala.comshopfloor_portal.fragment.BusyDialog" type="XML"/>
+						</l:dependents>
+					</l:VerticalLayout>
+					<Panel>
+						<l:Grid defaultSpan="L12 M7 S12" width="auto">
+							<l:content>
+								<VBox class="sapUiSmallMargin">
+									<f:SimpleForm id="form" editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12"
+										labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1"
+										singleContainerFullSize="false">
+										<f:content>
+											<core:Title text="Header details"/>
+											<Label text="Production order no"/>
+											<Text text="{/ProNo}"/>
+											<Label text="Explosion date"/>
+										<Text text="{ path : '/ExplDate', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+											<Label text="Routing no"/>
+											<Text text="{/RoutingNo}"/>
+											<Label text="Reservation no"/>
+											<Text text="{/ReservationNumber}"/>
+											<Label text="Enter date"/>
+										<Text text="{ path : '/EnterDate', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+											<core:Title text=""/>
+											<Label text="Scrap quantity"/>
+											<Text text="{/Scrap}"/>
+											<Label text="Target quantity"/>
+											<Text text="{/TargetQuantity}"/>
+											<Label text="Order type"/>
+											<Text text="{/OrderType}"/>
+											<Label text="Start date"/>
+											<Text text="{ path : '/StartDate', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+											<Label text="Finish date"/>
+											<Text text="{ path : '/FinishDate', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+										</f:content>
+									</f:SimpleForm>
+									<Panel>
+										<content>
+											<Table id="ploitem" inset="false" items="{ path: '/'}">
+												<columns>
+													<Column minScreenWidth="Tablet">
+														<Text text="Reservation item"/>
+													</Column>
+													<Column minScreenWidth="Tablet" demandPopin="true">
+														<Text text="Material"/>
+													</Column>
+													<Column minScreenWidth="Tablet" demandPopin="true">
+														<Text text="Description"/>
+													</Column>
+													<Column minScreenWidth="Tablet" demandPopin="true">
+														<Text text="Required quantity"/>
+													</Column>
+													<Column minScreenWidth="Tablet" demandPopin="true">
+														<Text text="Entry quantity"/>
+													</Column>
+													<Column minScreenWidth="Tablet" demandPopin="true">
+														<Text text="Withdrawn quantity"/>
+													</Column>
+													<Column minScreenWidth="Tablet" demandPopin="true">
+														<Text text="Movement type"/>
+													</Column>
+													<Column minScreenWidth="Tablet" demandPopin="true">
+														<Text text="Item number"/>
+													</Column>
+													<Column minScreenWidth="Tablet" demandPopin="true">
+														<Text text="Item category"/>
+													</Column>
+													
+													<Column minScreenWidth="Tablet" demandPopin="true">
+														<Text text="Operation"/>
+													</Column>
+													<!--<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="End">
+				<Text text="Dimensions" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="Weight" />
+			</Column>
+			<Column
+				hAlign="End">
+				<Text text="Price" />
+			</Column>-->
+												</columns>
+												<items>
+													<ColumnListItem>
+														<cells>
+															<Text text="{ReservationItem}"/>
+															<Text text="{Material}"/>
+															<Text text="{MaterialDescription}"/>
+															<Text text="{ReqQuan}"/>
+															<Text text="{EntryQuantity}"/>
+															<Text text="{WithdrawnQuantity}"/>
+															<Text text="{MovementType}"/>
+															<Text text="{ItemNumber}"/>
+															<Text text="{ItemCategory}"/>
+															<Text text="{Operation}"/>
+															<!--<ObjectNumber
+						number="{WeightMeasure}"
+						unit="{WeightUnit}"
+						state="{
+							parts: [
+								{path: 'WeightMeasure'},
+								{path: 'WeightUnit'}
+							],
+							formatter: 'sap.m.sample.Table.Formatter.weightState'
+						}" />
+					<ObjectNumber
+							number="{
+								parts:[{path:'Price'},{path:'CurrencyCode'}],
+								type: 'sap.ui.model.type.Currency',
+								formatOptions: {showMeasure: false}
+							}"
+							unit="{CurrencyCode}" />-->
+														</cells>
+													</ColumnListItem>
+												</items>
+											</Table>
+										</content>
+									</Panel>
+								</VBox>
+							</l:content>
+						</l:Grid>
+					</Panel>
+				</content>
 			</Page>
 		</pages>
 	</App>

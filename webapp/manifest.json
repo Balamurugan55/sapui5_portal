@@ -110,6 +110,36 @@
 					"targetAggregation": "pages",
 					"controlId": "app",
 					"controlAggregation": "pages"
+				},
+				"plodet": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "plodet",
+					"viewLevel": 4,
+					"targetAggregation": "pages",
+					"controlId": "app",
+					"controlAggregation": "pages"
+				},
+				"prodet": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "prodet",
+					"viewLevel": 5,
+					"targetAggregation": "pages",
+					"controlId": "app",
+					"controlAggregation": "pages"
+				},
+				"plolist": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "plolist",
+					"viewLevel": 6,
+					"targetAggregation": "pages",
+					"controlId": "app",
+					"controlAggregation": "pages"
 				}
 			},
 			"routes": [{
@@ -134,6 +164,30 @@
 				"target": ["sfdashboard"],
 				"titleTarget": "",
 				"greedy": false,
+				"targetAggregation": "pages",
+				"controlId": "app"
+			}, {
+				"name": "plodet",
+				"pattern": "plodet",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["plodet"],
+				"targetAggregation": "pages",
+				"controlId": "app"
+			}, {
+				"name": "prodet",
+				"pattern": "prodet",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["prodet"],
+				"targetAggregation": "pages",
+				"controlId": "app"
+			}, {
+				"name": "plolist",
+				"pattern": "plolist",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["plolist"],
 				"targetAggregation": "pages",
 				"controlId": "app"
 			}]

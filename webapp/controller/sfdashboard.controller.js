@@ -1,52 +1,32 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	'sap/ui/model/json/JSONModel',
-	'sap/m/library'
-], function(Controller, JSONModel, mobileLibrary) {
+	"sap/m/MessageBox",
+	"sap/ui/core/routing/History",
+	"sap/ui/core/UIComponent"
+], function(Controller, MessageBox, History, UIComponent) {
 	"use strict";
 	//var PopinLayout = mobileLibrary.PopinLayout;
 	return Controller.extend("bala.comshopfloor_portal.controller.sfdashboard", {
 
-		/*onPopinLayoutChanged: function() {
-			var oTable = this.byId("idProductsTable");
-			var oComboBox = this.byId("idPopinLayout");
-			var sPopinLayout = oComboBox.getSelectedKey();
-			switch (sPopinLayout) {
-				case "Block":
-					oTable.setPopinLayout(PopinLayout.Block);
-					break;
-				case "GridLarge":
-					oTable.setPopinLayout(PopinLayout.GridLarge);
-					break;
-				case "GridSmall":
-					oTable.setPopinLayout(PopinLayout.GridSmall);
-					break;
-				default:
-					oTable.setPopinLayout(PopinLayout.Block);
-					break;
-			}
-		},
+		onPress: function() {
 
-		onSelect: function(oEvent) {
-			var bSelected = oEvent.getParameter("selected"),
-				sText = oEvent.getSource().getText(),
-				oTable = this.byId("idProductsTable"),
-				aSticky = oTable.getSticky() || [];
-
-			if (bSelected) {
-				aSticky.push(sText);
-			} else if (aSticky.length) {
-				var iElementIndex = aSticky.indexOf(sText);
-				aSticky.splice(iElementIndex, 1);
-			}
-
-			oTable.setSticky(aSticky);
-		},
-
-		onToggleInfoToolbar: function(oEvent) {
-			var oTable = this.byId("idProductsTable");
-			oTable.getInfoToolbar().setVisible(!oEvent.getParameter("pressed"));
-		}*/
+			MessageBox.warning("Are you sure to logout?", {
+				actions: [MessageBox.Action.OK, MessageBox.Action.CANCEL],
+				emphasizedAction: MessageBox.Action.OK,
+				onClose: function(sAction) {
+					if (sAction === "OK") {
+						var oHistory = History.getInstance();
+						var sPreviousHash = oHistory.getPreviousHash();
+						if (sPreviousHash !== undefined) {
+							window.history.go(-1);
+						} else {
+							var oRouter = UIComponent.getRouterFor(this);
+							oRouter.navTo("sfdashboard", {}, true);
+						}
+					}
+				}
+			});
+		}
 
 	});
 

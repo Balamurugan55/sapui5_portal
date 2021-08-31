@@ -1,17 +1,51 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="bala.comshopfloor_portal.controller.plolist"
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" controllerName="bala.comshopfloor_portal.controller.plolist"
 	xmlns:html="http://www.w3.org/1999/xhtml">
-	<App>
+	<App id="app">
 		<Panel>
-				<content>
-					<Table id="plolist" inset="false" items="{ path: '/ProductCollection', sorter: { path: 'Name' } }">
-						<columns>
-							<Column width="12em">
-								<Text text="Product"/>
-							</Column>
-							<Column minScreenWidth="Tablet" demandPopin="true">
-								<Text text="Supplier"/>
-							</Column>
-							<!--<Column
+			<content>
+				<l:VerticalLayout class="sapUiContentPadding" width="100%">
+						<l:dependents>
+							<core:Fragment fragmentName="bala.comshopfloor_portal.fragment.BusyDialog" type="XML"/>
+						</l:dependents>
+					</l:VerticalLayout>
+				<ScrollContainer
+            height="90%"
+            vertical="true"
+          >
+				<Table id="plolist" inset="false" items="{ path: '/' }" >
+					
+					<columns>
+						<Column minScreenWidth="Tablet">
+							<Text text="Planned order no"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Material"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Procurement type"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Order type"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Total plo quantity"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Fixed scrap Quantity"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Required quantity"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Plan open date"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Start date"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Finish date"/>
+						</Column>
+						<!--<Column
 				minScreenWidth="Desktop"
 				demandPopin="true"
 				hAlign="End">
@@ -27,14 +61,22 @@
 				hAlign="End">
 				<Text text="Price" />
 			</Column>-->
-						</columns>
-						<items>
-							<ColumnListItem>
-								<cells>
-									<Text text="{PlannedorderNum}"/>
-									<Text text="{Material}"/>
-									<Text text="{Width} x {Depth} x {Height} {DimUnit}"/>
-									<!--<ObjectNumber
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation" press="onClick">
+							<cells >
+								<Text text="{PlannedorderNum}"/>
+								<Text text="{Material}"/>
+								<Text text="{ProcurementType}"/>
+								<Text text="{OrderType}"/>
+								<Text text="{TotalPlordQty}"/>
+								<Text text="{FixedScrapQty}"/>
+								<Text text="{ReqQuan}"/>
+								<Text text="{ path : 'PlanOpenDate', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+								<Text text="{ path : 'OrderStartDate', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+								<Text text="{ path : 'OrderFinDate', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+								<!--<Text text="{Width} x {Depth} x {Height} {DimUnit}"/>
+									<ObjectNumber
 						number="{WeightMeasure}"
 						unit="{WeightUnit}"
 						state="{
@@ -51,11 +93,13 @@
 								formatOptions: {showMeasure: false}
 							}"
 							unit="{CurrencyCode}" />-->
-								</cells>
-							</ColumnListItem>
-						</items>
-					</Table>
-				</content>
+							</cells>
+						</ColumnListItem>
+					</items>
+					
+				</Table>
+				</ScrollContainer>
+			</content>
 		</Panel>
 	</App>
 </mvc:View>

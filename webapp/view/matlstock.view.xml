@@ -1,0 +1,98 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" controllerName="bala.comshopfloor_portal.controller.matlstock"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="app">
+		<Panel>
+			<content>
+				<l:VerticalLayout class="sapUiContentPadding" width="100%">
+						<l:dependents>
+							<core:Fragment fragmentName="bala.comshopfloor_portal.fragment.BusyDialog" type="XML"/>
+						</l:dependents>
+					</l:VerticalLayout>
+				<ScrollContainer height="90%" vertical="true">
+					<Table id="matlstock" inset="false" items="{ path: '/' }">
+						<columns>
+					
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Material no"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Procurement type"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Material type"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Description"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Mrp date"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Planned order"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Plant stock"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Purchase orders"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Fixed issues"/>
+							</Column>
+							<!--<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="End">
+				<Text text="Dimensions" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="Weight" />
+			</Column>
+			<Column
+				hAlign="End">
+				<Text text="Price" />
+			</Column>-->
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells >
+									
+									<Text text="{Material}"/>
+									<Text text="{ProcType}"/>
+									<Text text="{MatlType}"/>
+									<Text text="{MatlDesc}"/>
+									<Text text="{ path : 'MrpDate', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long' } }"/>
+									<Text text="{PlndOrder}"/>
+									<Text text="{PlntStock}"/>
+									<Text text="{PurOrders}"/>
+									<Text text="{FixedIssues}"/>
+									<!--<Text text="{Width} x {Depth} x {Height} {DimUnit}"/>
+									<ObjectNumber
+						number="{WeightMeasure}"
+						unit="{WeightUnit}"
+						state="{
+							parts: [
+								{path: 'WeightMeasure'},
+								{path: 'WeightUnit'}
+							],
+							formatter: 'sap.m.sample.Table.Formatter.weightState'
+						}" />
+					<ObjectNumber
+							number="{
+								parts:[{path:'Price'},{path:'CurrencyCode'}],
+								type: 'sap.ui.model.type.Currency',
+								formatOptions: {showMeasure: false}
+							}"
+							unit="{CurrencyCode}" />-->
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</ScrollContainer>
+			</content>
+		</Panel>
+	</App>
+</mvc:View>

@@ -1,6 +1,7 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"sap/ui/core/mvc/Controller",
+	"sap/m/MessageBox"
+], function(Controller,MessageBox) {
 	"use strict";
 
 	return Controller.extend("bala.comshopfloor_portal.controller.plocreate", {
@@ -20,6 +21,7 @@ sap.ui.define([
 			var plo_qty=this.byId("plo_qty").getValue();
 			var plo_sdate=this.byId("plo_sdate").getValue();
 			var plo_fdate=this.byId("plo_fdate").getValue();
+			MessageBox.success("Hello");
 			//hi
 		}
 		

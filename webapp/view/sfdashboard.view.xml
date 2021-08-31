@@ -3,23 +3,27 @@
 	<App id="app">
 		<pages>
 			<Page title="Shop floor portal">
+				<headerContent>
+					<Button icon="sap-icon://decline" press="onPress"/>
+				</headerContent>
 				<content>
 				<IconTabBar
 		id="idIconTabBarNoIcons"
 		expanded="{device>/isNoPhone}"
 		class="sapUiResponsiveContentPadding">
-		<items>
-			<IconTabFilter text="Planned order list" key="info">
+					
+		<items >
+			<IconTabFilter text="Planned order list" key="info" >
 				<mvc:XMLView viewName="bala.comshopfloor_portal.view.plolist"/>
 			</IconTabFilter>
-			<IconTabFilter text="Production order list" key="attachments">
+			<IconTabFilter text="Production order list" key="attachments" >
 				<mvc:XMLView viewName="bala.comshopfloor_portal.view.prolist"/>
 			</IconTabFilter>
 			<IconTabFilter text="Plan order create" key="notes">
 				<mvc:XMLView viewName="bala.comshopfloor_portal.view.plocreate"/>
 			</IconTabFilter>
-			<IconTabFilter text="People" key="people">
-				<Text text="People content goes here ..." />
+			<IconTabFilter text="Material stock" key="people">
+				<mvc:XMLView viewName="bala.comshopfloor_portal.view.matlstock"/>
 			</IconTabFilter>
 		</items>
 	</IconTabBar>
