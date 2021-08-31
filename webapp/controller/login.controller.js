@@ -59,14 +59,7 @@ sap.ui.define([
                 
                         window.console.log('HIIIIIIIIIIIIII IN ERROR');
                         sap.m.MessageToast.show('Invalid Credentials!');
-                        oModel.read("/plolistSet?$filter=MrpCtrl eq '001' and PlanPlant eq 'SA02'",{
-                        	context: null,
-                urlParameters: null,
-                async: false,
-                success: function(oData1, oRes) {
-                	window.console.log(oData1,oRes);
-                }
-                        });
+                        oDialog.close();
                             
                 
                 }

@@ -3,6 +3,11 @@
 	<Panel width="100%">
 		<l:Grid defaultSpan="L12 M7 S12" width="auto">
 			<l:content>
+					<l:VerticalLayout class="sapUiContentPadding" width="100%">
+						<l:dependents>
+							<core:Fragment fragmentName="bala.comshopfloor_portal.fragment.BusyDialog" type="XML"/>
+						</l:dependents>
+					</l:VerticalLayout>
 				<f:SimpleForm width="100%" id="SimpleFormChange354wide" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3"
 					labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
 					columnsL="1" columnsM="1" singleContainerFullSize="false">
