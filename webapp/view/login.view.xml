@@ -1,5 +1,4 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
-	controllerName="bala.comshopfloor_portal.controller.login" xmlns:html="http://www.w3.org/1999/xhtml">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="bala.comshopfloor_portal.controller.login">
 	<App id="app">
 		<pages>
 			<Page title="Shop floor Portal">
@@ -8,23 +7,22 @@
 						<l:dependents>
 							<core:Fragment fragmentName="bala.comshopfloor_portal.fragment.BusyDialog" type="XML"/>
 						</l:dependents>
-					</l:VerticalLayout>
-					<VBox fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
+					</l:VerticalLayout><VBox fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
 						<items>
 							<Text text="Login page"/>
-							<Input id="userid" placeholder="User ID"></Input>
-							<Input id="password" placeholder="Password" type="Password"></Input>
-							<Button width="12rem" text="Login" type="Emphasized" press="onClick"></Button>
+							<Input id="userid" placeholder="User ID"/>
+							<Input id="password" placeholder="Password" type="Password"/>
+							<Button width="12rem" text="Login" type="Emphasized" press="onClick"/>
 						</items>
 					</VBox>
 				</content>
-				<footer >
+				<footer>
 					<Bar>
 						<contentLeft>
-							<Text text="Kaartech"></Text>
+							<Text text="Kaartech"/>
 						</contentLeft>
 						<contentRight>
-							<Text text="Login"></Text>
+							<Text text="Login"/>
 						</contentRight>
 					</Bar>
 				</footer>

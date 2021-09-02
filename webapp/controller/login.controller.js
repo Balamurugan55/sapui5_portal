@@ -3,14 +3,29 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"sap/ui/core/Fragment",
-	"sap/m/MessageToast"
+	"sap/m/MessageToast",
+	"sap/ui/core/routing/History",
+	"sap/ui/core/UIComponent"
 	
-], function(Controller,MessageBox, Fragment, syncStyleClass, MessageToast) {
+], function(Controller,MessageBox, Fragment, syncStyleClass, MessageToast,History) {
 	"use strict";
 	var coreModel=new sap.ui.model.json.JSONModel();
 	return Controller.extend("bala.comshopfloor_portal.controller.login", {
 		
-		
+		onInit: function() {
+			// set explored app's demo model on this sample
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			//oRouter.getRoute("login").attachPatternMatched(this._onObjectMatched, this);
+
+		},
+		onBeforeRendering: function(oEvent) {
+			var oHistory = sap.ui.core.routing.History.getInstance();
+			var sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.location.reload();
+			}
+				//window.location.reload();
+			},
 			onClick:function(oEvent){
 				var oDialog = this.byId("BusyDialog");
 					oDialog.open();

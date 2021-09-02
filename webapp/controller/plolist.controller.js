@@ -12,7 +12,7 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf bala.comshopfloor_portal.view.plolist
 		 */
-	onInit: function () {
+	onInit: function() {
 			// set explored app's demo model on this sample
 				var oFilters = [];
 				var mrp=sap.ui.getCore().getModel("login").oData.mrp;
@@ -23,8 +23,9 @@ sap.ui.define([
                 oFilters.push(filter2);
                 // window.console.log(oFilters);
                
-              
-                var oTable = this.getView().byId("plolist");
+            	var view = this.getView();
+                var oTable = view.byId("plolist");
+                //oTable.setVisibleRowCount(500);
                 var url = "/sap/opu/odata/sap/ZSFLOGIN_SRV/";
                 var model = new sap.ui.model.odata.v2.ODataModel(url, true, "abaper", "abap@123");
                 model.read("/plolistSet", {
@@ -56,6 +57,7 @@ sap.ui.define([
            onClick:function(oEvent){
            		var row=oEvent.getSource();
            		var oTable = this.getView().byId("plolist");
+           		
         		
         		sap.ui.getCore().setModel(coreModel,"test");
            		var index = oTable._oItemNavigation.iFocusedIndex - 1;

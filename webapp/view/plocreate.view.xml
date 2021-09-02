@@ -12,19 +12,9 @@
 					labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
 					columnsL="1" columnsM="1" singleContainerFullSize="false">
 					<f:content>
-						<!--<Label text="Name"/>
-					<Input value="{SupplierName}"/>
-					<Label text="Street/No."/>
-					<Input value="{Street}"></Input>
-				
-					<Label text="ZIP Code/City"/>
-					<Input value="{ZIPCode}"/>
-					<Label text="ZIP Code/City"/>
-					<Input value="{City}"/>
-					<Label text="Country"/>
-					<Input value="{City}"/>-->
+						
 						<Label text="Planned order profile"/>
-						<Input id="plo_prof" value="{SupplierName}"/>
+						<Input id="plo_prof"/>
 						<Label text="Material"/>
 						<Input id="material" value="{Street}"></Input>
 						<Label text="Planned order quantity"/>

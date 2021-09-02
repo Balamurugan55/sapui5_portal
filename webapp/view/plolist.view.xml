@@ -12,7 +12,7 @@
             height="90%"
             vertical="true"
           >
-				<Table id="plolist" inset="false" items="{ path: '/' }" >
+				<Table id="plolist" items="{ path: '/' }">
 					
 					<columns>
 						<Column minScreenWidth="Tablet">
